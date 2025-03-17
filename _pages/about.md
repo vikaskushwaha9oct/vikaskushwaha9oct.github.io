@@ -2,33 +2,36 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Pursuing Phd at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (since 2023), Senior Software Engg at Goldman Sachs (2013-23), B.Tech - M.Tech Dual Degree at CSE, IIT Kanpur (2008-13)
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>CSE, IIT Kanpur</p>
+    <p>Uttar Pradesh, India - 208016</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I see the world as one big interconnected machine that I want to understand and model.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Currently, working towards my Phd on modelling understandability. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better ways of representing information for developing intelligent machines?
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction and automated data storage optimizers over my 10 years there.
+
+Before joining Goldman Sachs, I graduated from IIT kanpur with a B.Tech - M.Tech dual degree in CSE. My master's thesis was in the area of programming language design for parallel, distributed and concurrent programming.
+
+I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there?
