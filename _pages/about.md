@@ -2,15 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: Pursuing Phd at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (since 2023), Senior Software Engg at Goldman Sachs (2013-23), B.Tech - M.Tech Dual Degree at CSE, IIT Kanpur (2008-13)
+subtitle: Pursuing Phd at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (since 2023), Senior Software Engg at <a href='https://www.goldmansachs.com/worldwide/india'>Goldman Sachs, Bengaluru</a> (2013-23), B.Tech - M.Tech Dual Degree at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (2008-13)
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
-    <p>CSE, IIT Kanpur</p>
-    <p>Uttar Pradesh, India - 208016</p>
+  more_info:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -32,6 +30,8 @@ Currently, working towards my Phd on modelling understandability. What are the g
 
 Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction and automated data storage optimizers over my 10 years there.
 
-Before joining Goldman Sachs, I graduated from IIT kanpur with a B.Tech - M.Tech dual degree in CSE. My master's thesis was in the area of programming language design for parallel, distributed and concurrent programming.
+Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech dual degree in CSE. My master's thesis was in the area of programming language design for parallel, distributed and concurrent programming.
 
-I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there?
+I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there? Read my articles on this subject <a href='https://theprint.in/author/vikas-kushwaha/'>here</a>.
+
+I love visiting new places and trying out local cuisines.
