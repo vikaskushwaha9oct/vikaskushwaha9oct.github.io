@@ -26,7 +26,7 @@ latest_posts:
 
 I see the world as one big interconnected machine that I want to understand and model.
 
-Currently, working towards my Phd on modelling understandability. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better ways of representing information for developing intelligent machines?
+Currently, working towards my Phd on modelling understandability with <a href='https://www.cse.iitk.ac.in/users/subhajit/'>Prof. Subhajit Roy</a> and <a href='https://sruti-s-ragavan.github.io/'>Prof. Sruti S Ragavan</a>. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better ways of representing information for developing intelligent machines?
 
 Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction and automated data storage optimizers over my 10 years there.
 
