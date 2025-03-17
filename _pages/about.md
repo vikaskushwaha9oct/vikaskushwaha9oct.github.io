@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Pursuing Phd at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (since 2023), Senior Software Engg at <a href='https://www.goldmansachs.com/worldwide/india'>Goldman Sachs, Bengaluru</a> (2013-23), B.Tech - M.Tech Dual Degree at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (2008-13)
+subtitle: Pursuing Phd at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (since 2024), Senior Software Engg at <a href='https://www.goldmansachs.com/worldwide/india'>Goldman Sachs, Bengaluru</a> (2013-23), B.Tech - M.Tech Dual Degree at <a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a> (2008-13)
 
 profile:
   align: right
