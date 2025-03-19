@@ -34,4 +34,4 @@ Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech
 
 I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there? Read my articles on this subject <a href='https://theprint.in/author/vikas-kushwaha/'>here</a>.
 
-I love visiting new places and trying out local cuisines.
+I love visiting new and unique places, trying out local cuisines, making travel plans and organizing things.
