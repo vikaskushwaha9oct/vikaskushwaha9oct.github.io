@@ -26,12 +26,12 @@ latest_posts:
 
 I see the world as one big interconnected machine that I want to understand and model.
 
-Currently, working towards my Phd on modelling understandability with <a href='https://www.cse.iitk.ac.in/users/subhajit/'>Prof. Subhajit Roy</a> and <a href='https://sruti-s-ragavan.github.io/'>Prof. Sruti S Ragavan</a>. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better ways of representing information for developing intelligent machines?
+Currently, working towards my Phd on modelling understandability with <a href='https://www.cse.iitk.ac.in/users/subhajit/'>Prof. Subhajit Roy</a> and <a href='https://sruti-s-ragavan.github.io/'>Prof. Sruti S Ragavan</a>. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better ways of representing information for developing intelligent machines? Read more on this research proposal <a href='https://arxiv.org/abs/2503.21615'>here</a>.
 
-Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction and automated data storage optimizers over my 10 years there.
+Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction (<a href='https://patents.justia.com/patent/11657101'>patent</a>, <a href='https://github.com/goldmansachs/docknight_lib'>github</a>) and automated data storage optimizers over my 10 years there.
 
-Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech dual degree in CSE. My master's thesis was in the area of programming language design for parallel, distributed and concurrent programming.
+Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech dual degree in CSE. My master's <a href='/assets/pdf/MasterThesis.pdf'>thesis</a> was in the area of programming language design for parallel, distributed and concurrent programming.
 
 I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there? Read my articles on this subject <a href='https://theprint.in/author/vikas-kushwaha/'>here</a>.
 
-I love visiting new and unique places, trying out local cuisines, making travel plans and organizing things.
+I love visiting new and unique places, trying out local cuisines, making travel plans and organizing things/ideas.
