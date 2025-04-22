@@ -24,14 +24,14 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I see the world as one big interconnected machine that I want to understand and model.
+What enables humans to create? -- quality software, art, stories, inventions, and so on. I am interested in this question both on an individual and societal level. What aspects of human intelligence when optimized leads individuals to create such works? How should a society be organized so that it flourishes and creates abundance of such works? Can we build frameworks and tools that aid individuals and societies in this process of creation?
 
 Currently, working towards my Phd on modelling understandability with <a href='https://www.cse.iitk.ac.in/users/subhajit/'>Prof. Subhajit Roy</a> and <a href='https://sruti-s-ragavan.github.io/'>Prof. Sruti S Ragavan</a>. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better languages for representing information for developing intelligent machines? Read more on this research direction <a href='https://arxiv.org/abs/2503.21615'>here</a>.
 
 Previously, I was a senior software engineer at Goldman sachs, where I worked on designing and developing libraries and frameworks spanning data visualization, data versioning, data contracts, document information extraction (<a href='https://patents.justia.com/patent/11657101'>patent</a>, <a href='https://github.com/goldmansachs/docknight_lib'>github</a>) and automated data storage optimizers over my 10 years there.
 
-Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech dual degree in CSE. My master's <a href='https://vikaskushwaha9oct.github.io/assets/pdf/MasterThesis.pdf'>thesis</a> was in the area of programming language design for parallel, distributed and concurrent programming.
+Before joining Goldman Sachs, I graduated from IIT Kanpur with a B.Tech - M.Tech dual degree in CSE. My master's <a href='https://vikaskushwaha9oct.github.io/assets/pdf/MasterThesis.pdf' target='_blank' rel='noopener noreferrer'>thesis</a> was in the area of programming language design for parallel, distributed and concurrent programming.
 
-I am also interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there? Read my articles on this subject <a href='https://theprint.in/author/vikas-kushwaha/'>here</a>.
+I am interested in studying cultural systems, their various aspects and evolutions. What do we need to create a society ready for human flourishing? More specifically in Indian context, what community building systems (rooted in India's Dharmic way of thinking) can help us get there? Read my articles on this subject <a href='https://theprint.in/author/vikas-kushwaha/'>here</a>.
 
 I love visiting new and unique places, trying out local cuisines, making travel plans and organizing things/ideas.
