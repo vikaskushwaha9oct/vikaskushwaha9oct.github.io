@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-What enables humans to create? -- quality software, art, stories, inventions, and so on. I am interested in this question both on an individual and societal level. What aspects of human intelligence when optimized leads individuals to create such works? How should a society be organized so that it flourishes and creates abundance of such works? Can we build frameworks and tools that aid individuals and societies in this process of creation?
+What enables humans to create? -- quality software, art, stories, inventions, and so on. I am interested in this question both on an individual and societal level. What methods or ways of thinking lead individuals to create such works? How should a society be organized so that it flourishes and creates abundance of such works? Can we build frameworks and tools that aid individuals and societies in this process of creation?
 
 Currently, working towards my Phd on modelling understandability with <a href='https://www.cse.iitk.ac.in/users/subhajit/'>Prof. Subhajit Roy</a> and <a href='https://sruti-s-ragavan.github.io/'>Prof. Sruti S Ragavan</a>. What are the generalizable aspects of information entities such as text, code, plans and user interfaces that make them more or less understandable to humans? Can we make these aspects measurable and use them as optimization directives for creating better open world planners, automated software designers and more steerable AI agents? Can these models of understandability inspire better languages for representing information for developing intelligent machines? Read more on this research direction <a href='https://arxiv.org/abs/2503.21615'>here</a>.
 
