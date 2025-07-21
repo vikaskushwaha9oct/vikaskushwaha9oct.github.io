@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <span style="color:grey">Phd Candidate (<a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a>) with 10 years of Software Engineering (<a href='https://www.goldmansachs.com/worldwide/india'>Goldman Sachs</a>) experience developing a Theory of Understandability.</span>
+subtitle: <span style="color:grey"><b>Phd Candidate (<a href='https://www.cse.iitk.ac.in/'>CSE, IIT Kanpur</a>) with 10 years of Software Engineering experience (<a href='https://www.goldmansachs.com/worldwide/india'>Goldman Sachs</a>). Working towards a Theory of Understandability.</b></span>
 
 profile:
   align: right
