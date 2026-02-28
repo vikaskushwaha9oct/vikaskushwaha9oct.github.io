@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	
+<p><b>First Code Snippet</b></p>
+<p>test() returns: <span id="cs1_executeTest">8</span></p>
+<pre id="cs1" style="tab-size: 4;"><span></span><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">fn</span>(s1: <span style="color: #008000">int</span>, s2: <span style="color: #008000">int</span>, s3: <span style="color: #008000">int</span>) <span style="color: #666">-&gt;</span> <span style="color: #008000">int</span>:
+    x: <span style="color: #008000">int</span> <span style="color: #666">=</span> <span style="background: #FFFACD">s3</span>
+    <span style="color: #008000; font-weight: bold">if</span> s3 <span style="color: #666">&lt;=</span> s1 <span style="color: #A2F; font-weight: bold">and</span> s1 <span style="color: #666">&gt;=</span> s2:
+        x <span style="color: #666">=</span> s1
+    <span style="color: #008000; font-weight: bold">elif</span> s2 <span style="color: #666">&gt;=</span> s1 <span style="color: #A2F; font-weight: bold">and</span> s3 <span style="color: #666">&lt;=</span> s2:
+        x <span style="color: #666">=</span> s2
+        
+    <span style="color: #008000; font-weight: bold">return</span> x
+    
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">test</span>() <span style="color: #666">-&gt;</span> <span style="color: #008000">int</span>:
+    <span style="color: #008000; font-weight: bold">return</span> fn(<span style="color: #666">7</span>, <span style="color: #666">8</span>, <span style="color: #666">2</span>)</pre>
+
+
+
+<p><b>Second Code Snippet</b></p>
+<p>test() returns: <span id="cs2_executeTest">8</span></p>
+<pre id="cs2" style="tab-size: 4;"><span></span><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">fn</span>(s1: <span style="color: #008000">int</span>, s2: <span style="color: #008000">int</span>, s3: <span style="color: #008000">int</span>, s4: <span style="color: #008000">int</span>) <span style="color: #666">-&gt;</span> <span style="color: #008000">int</span>:
+    x: <span style="color: #008000">int</span> <span style="color: #666">=</span> <span style="background: #FFFACD">s4</span>
+    <span style="color: #008000; font-weight: bold">if</span> s3 <span style="color: #666">&lt;=</span> s1 <span style="color: #A2F; font-weight: bold">and</span> s1 <span style="color: #666">&gt;=</span> s4 <span style="color: #A2F; font-weight: bold">and</span> s1 <span style="color: #666">&gt;=</span> s2:
+        x <span style="color: #666">=</span> s1
+    <span style="color: #008000; font-weight: bold">elif</span> s2 <span style="color: #666">&gt;=</span> s4 <span style="color: #A2F; font-weight: bold">and</span> s1 <span style="color: #666">&lt;=</span> s2 <span style="color: #A2F; font-weight: bold">and</span> s3 <span style="color: #666">&lt;=</span> s2:
+        x <span style="color: #666">=</span> s2
+    <span style="color: #008000; font-weight: bold">elif</span> s2 <span style="color: #666">&lt;=</span> s3 <span style="color: #A2F; font-weight: bold">and</span> s3 <span style="color: #666">&gt;=</span> s1 <span style="color: #A2F; font-weight: bold">and</span> s4 <span style="color: #666">&lt;=</span> s3:
+        x <span style="color: #666">=</span> s3
+        
+    <span style="color: #008000; font-weight: bold">return</span> x
+    
+<span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">test</span>() <span style="color: #666">-&gt;</span> <span style="color: #008000">int</span>:
+    <span style="color: #008000; font-weight: bold">return</span> fn(<span style="color: #666">7</span>, <span style="color: #666">8</span>, <span style="color: #666">2</span>, <span style="color: #666">5</span>)</pre>
+
+</body>
+</html>

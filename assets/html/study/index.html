@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color: #f0fff0;">
+
+<script>
+class UnderstandabilityComparisonResult {
+	constructor(dimension, codeSnippetOrdering, moreUnderstandableOption, explanation, time, verifiedA, verifiedB) {
+		this.dimension = dimension;
+		this.codeSnippetOrdering = codeSnippetOrdering;
+		this.moreUnderstandableOption = moreUnderstandableOption;
+		this.explanation = explanation;
+		this.time = time;
+		this.verifiedA = verifiedA;
+		this.verifiedB = verifiedB;
+	}
+}
+
+// questionaire categorizations
+const questionaireDimensions = ['perceptual_quality', 'memory_cost', 'abstraction_need', 'cohesion', 'logical_consistency', 'semantic_fit'];
+
+// questionaire data
+const questionaireCodes = new Map();
+const codeSnippetOrderings = new Map();
+
+// response state
+let email = '';
+let experience = '';
+let gender = '';
+let designation = '';
+let language = '';
+let dimensionWiseDetails = [];
+
+// questionaire state
+const localStorage = false;
+let currSectionTopic = 'consent';
+let sectionStartTime = 0;
+
+const data4 = '$2a$10$PdAD3MiTmH';
+
+window.addEventListener('load', () => {
+	// randomize questionaire
+	randomlyShuffleArray(questionaireDimensions);
+	for (const dimension of questionaireDimensions) {
+		codeSnippetOrderings.set(dimension, random(2) === 0 ? 'AB' : 'BA');
+	}
+	
+	// transitions between sections of the questionaire
+	document.getElementById('section_transition_button').addEventListener('click', async () => {
+		setText('input_error', '');
+		let nextSectionTopic = currSectionTopic;
+		
+		const updated = updateResponses();
+		if (updated) {
+			if (currSectionTopic === 'consent') {
+				nextSectionTopic = 'metadata';
+				hide('consent_section');
+				show('metadata_section');
+				setText('section_transition_button', 'Next');
+				window.scrollTo(0, 0);
+			} else if (currSectionTopic === 'metadata') {
+				const loaded = await loadQuestionaireData();
+				if (loaded) {
+					sectionStartTime = Date.now();
+					nextSectionTopic = questionaireDimensions.at(0);
+					hide('metadata_section');
+					show('questionaire_section');
+					// show('skip_control');
+					showQuestionDataFor(nextSectionTopic);
+					window.scrollTo(0, 0);
+				}
+			} else {
+				hide('left_code_executeTest');
+				hide('right_code_executeTest');
+				// document.getElementById('skip').checked = false;
+				
+				if (currSectionTopic === questionaireDimensions.at(-1)) {
+					nextSectionTopic = 'ending';
+					hide('questionaire_section');
+					hide('section_transition_controls');
+					show('end_section');
+					window.scrollTo(0, 0);
+					saveResult();
+				} else {
+					sectionStartTime = Date.now();
+					nextSectionTopic = questionaireDimensions[questionaireDimensions.indexOf(currSectionTopic) + 1];
+					hideQuestionDataFor(currSectionTopic);
+					showQuestionDataFor(nextSectionTopic);
+					if (nextSectionTopic === questionaireDimensions.at(-1)) {
+						setText('section_transition_button', 'Finish');
+					}
+					window.scrollTo(0, 0);
+					['left_code_viewer', 'right_code_viewer'].forEach(v => { document.getElementById(v).scrollTo(0, 0); });
+				}
+			}
+		}
+		currSectionTopic = nextSectionTopic;
+	});
+	
+	// scroll sync left and right viewer of the side-by-side code viewer
+	const leftCodeViewer = document.getElementById('left_code_viewer');
+	const rightCodeViewer = document.getElementById('right_code_viewer');
+	leftCodeViewer.addEventListener('scroll', () => {
+	    rightCodeViewer.scrollTop = leftCodeViewer.scrollTop;
+	    rightCodeViewer.scrollLeft = leftCodeViewer.scrollLeft;
+	});
+	rightCodeViewer.addEventListener('scroll', () => {
+	    leftCodeViewer.scrollTop = rightCodeViewer.scrollTop;
+	    leftCodeViewer.scrollLeft = rightCodeViewer.scrollLeft;
+	});
+});
+
+const data5 = 'uhC5tlvJ3ZfeGXLyf5dJc';
+
+function randomlyShuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = random(i + 1);
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+const data6 = 'EeTSSqicU.Im.Hye4c4zEm';
+
+function random(n) {
+	return Math.floor(Math.random() * n);
+}
+
+const data1 = 'X-Acc';
+
+async function saveResult() {
+	const result = {email, experience, gender, designation, language, dimensionWiseDetails};
+	if (localStorage) {
+		saveResultLocal(result);
+	} else {
+		saveResultServer(result);
+	}
+}
+
+const data2 = "ess-K";
+
+async function saveResultLocal(result) {
+	const uuid = crypto.randomUUID();
+	const uploadData = new FormData();
+	uploadData.append('files', new Blob([prettyJSON(result)], {type: 'application/json'}), uuid + '.json');
+	const uploadRequest = new XMLHttpRequest();
+	uploadRequest.open('POST', '/upload');
+	uploadRequest.onreadystatechange = () => {
+	    if (uploadRequest.readyState === XMLHttpRequest.DONE) {
+			if (uploadRequest.status === 204) {
+				displaySaveResultMessage('Responses uploaded as ' + uuid + '.json.', false);
+			} else {
+				displaySaveResultMessage(`Error: ${uploadRequest.status}: ${uploadRequest.statusText}.`, true);
+			}
+		}
+	};
+	uploadRequest.send(uploadData);
+}
+
+const data3 = 'ey';
+
+async function saveResultServer(result) {
+	const uploadRequest = new XMLHttpRequest();
+	uploadRequest.open("POST", "https://api.jsonbin.io/v3/b");
+	uploadRequest.setRequestHeader("Content-Type", "application/json");
+	uploadRequest.setRequestHeader(data1 + data2 + data3, data4 + data5 + data6);
+	uploadRequest.onreadystatechange = () => {
+	    if (uploadRequest.readyState === XMLHttpRequest.DONE) {
+			if (uploadRequest.status === 200) {
+				displaySaveResultMessage('Responses recorded on the server.', false);
+			} else if (uploadRequest.status >= 400 && uploadRequest.status <= 404) {
+				displaySaveResultMessage(`Error: ${uploadRequest.status}: ${uploadRequest.responseText}.`, true);
+			} else {
+				displaySaveResultMessage(`Error: ${uploadRequest.status}: ${uploadRequest.statusText}.`, true);
+			}
+		}
+	};
+	uploadRequest.send(prettyJSON(result));
+}
+
+function displaySaveResultMessage(message, isError) {
+	if (isError) {
+		setText('end_section', '<span style="color: red;">' + message + '</span><br><br>Please send the error message to <a href="mailto:vikask23@cse.iitk.ac.in" style="text-decoration: none; color: inherit;">vikask23@cse.iitk.ac.in</a>');
+	} else {
+		setText('end_section', message + '<br><br>Thanks for participating in this survey!');
+	}
+}
+
+function prettyJSON(data, indent='') {
+	const isArray = Array.isArray(data);
+	if (isPrimitive(data) || (isArray && data.every(isPrimitive))) {
+		return JSON.stringify(data);
+	}
+	const subJSONs = Object.keys(data).map(key => `${indent}  ` + (isArray ? '' : `"${key}": `) + prettyJSON(data[key], indent + '  '));
+	return (isArray ? '[' : '{') + '\n' + subJSONs.join(',\n') + `\n${indent}` + (isArray ? ']' : '}');
+}
+
+function isPrimitive(value) {
+	return value === null || typeof value !== 'object';
+}
+
+function updateResponses() {
+	if (currSectionTopic === 'consent') {
+		email = document.getElementById('email').value.trim();
+		if (email.length === 0) {
+			setText('input_error', 'No email provided.');
+			return false;
+		}
+		if (!document.getElementById('consent').checked) {
+			setText('input_error', 'Consent not provided.');
+			return false;
+		}
+	} else if (currSectionTopic === 'metadata') {
+		experience = document.getElementById('experience').value;
+		if (experience.length === 0) {
+			setText('input_error', 'No experience selected.');
+			return false;
+		}
+		gender = document.getElementById('gender').value;
+		designation = document.getElementById('designation').value;
+		if (designation.length === 0) {
+			setText('input_error', 'No designation selected.');
+			return false;
+		}
+		language = document.getElementById('language').value;
+		if (language.length === 0) {
+			setText('input_error', 'No language selected.');
+			return false;
+		}
+	} else {
+		// if (document.getElementById('skip').checked) {
+// 			return true;
+// 		}
+		const qsId = currSectionTopic + '_code_qs';
+		const questionCounter = questionaireDimensions.indexOf(currSectionTopic) + 1;
+		
+		let moreUnderstandableOption = '';
+		const comparisonElemSelected = document.querySelector('input[name="' + qsId + '_response' + '"]:checked');
+		if (comparisonElemSelected) {
+			moreUnderstandableOption = comparisonElemSelected.value.trim();
+		} else {
+			setText('input_error', 'No option selected.');
+			return false;
+		}
+
+		const explanation = document.getElementById(qsId + '_explanation').value.trim();
+		if (explanation.length === 0) {
+			setText('input_error', 'No explanation provided.');
+			return false;
+		}
+		const codeSnippetOrdering = codeSnippetOrderings.get(currSectionTopic);
+		const time = Math.trunc((Date.now() - sectionStartTime) / 1000);
+		const verifiedA = !document.getElementById('left_code_executeTest').hidden;
+		const verifiedB = !document.getElementById('right_code_executeTest').hidden;
+		dimensionWiseDetails.push(new UnderstandabilityComparisonResult(currSectionTopic, codeSnippetOrdering, moreUnderstandableOption, explanation, time, verifiedA, verifiedB));
+	}
+	return true;
+}
+
+async function loadQuestionaireData() {
+	for (const dimension of questionaireDimensions) {
+	    try {
+	        const response = await fetch('code_snippets_html_format/' + language + '/' + dimension + '.html', {cache: "reload"});
+	        if (!response.ok) {
+				setText('input_error', 'Unable to load ' + dimension + '.html');
+	            return false;
+	        }
+		
+	        const codeSnippetHtml = await response.text();
+			const domParser = new DOMParser();
+			const codeSnippetDoc = domParser.parseFromString(codeSnippetHtml, 'text/html');
+			loadCodeVersion(codeSnippetDoc, dimension);
+	    } catch (error) {
+			console.error('Error loading code elements from ' + dimension + '.html:', error);
+			setText('input_error', 'Error loading code elements from ' + dimension + '.html');
+			return false;
+	    }
+	}
+	return true;
+}
+
+function loadCodeVersion(codeSnippetDoc, dimension) {
+	const maxCodeLinesCount = Math.max(...['cs1', 'cs2'].map(v => codeSnippetDoc.getElementById(v).innerHTML.split(/\r\n|\r|\n/).length));
+	const codeLineNos = Array.from({length: maxCodeLinesCount}, (_, i) => String(i + 1).padStart(2)).join('\n');
+	
+	for (const version of ['cs1', 'cs2']) {
+		const code = codeSnippetDoc.getElementById(version).innerHTML;
+		const codeLinesCount = code.split(/\r\n|\r|\n/).length;
+		const codeVersion = dimension + '_' + version;
+		const paddingLines = '\n '.repeat(maxCodeLinesCount - codeLinesCount);
+		questionaireCodes.set(codeVersion, code + paddingLines);
+		questionaireCodes.set(codeVersion + '_line_nos', codeLineNos);
+		questionaireCodes.set(codeVersion + '_executeTest', codeSnippetDoc.getElementById(version + '_executeTest').innerHTML);
+	}
+}
+
+function hideQuestionDataFor(dimension) {
+	hide(dimension + '_code_qs');
+}
+
+function showQuestionDataFor(dimension) {
+	// set code relevant to dimension
+	const swapped = codeSnippetOrderings.get(dimension) === 'BA';
+	setCode('left_code', dimension + '_cs' + (swapped ? '2' : '1'));
+	setCode('right_code', dimension + '_cs' + (swapped ? '1' : '2'));
+	
+	// inherit shared question text from base element
+	const qsElement = document.getElementById(dimension + '_code_qs');
+	if (qsElement.hasAttribute('data-base')) {
+		const questionCounter = questionaireDimensions.indexOf(dimension) + 1;
+		const baseHTML = document.getElementById(qsElement.dataset.base).innerHTML.replaceAll('_x_', qsElement.id).replaceAll('_c_', questionCounter);
+		qsElement.innerHTML = baseHTML + '\n' + qsElement.innerHTML;
+		qsElement.removeAttribute('data-base');
+	}
+	
+	// show the code viewer and the question text element
+	if (dimension === questionaireDimensions.at(0)) {
+		show('side_by_side_code_viewer');
+	}
+	show(qsElement.id);
+}
+
+function setCode(elementId, codeVersion) {
+	setText(elementId, questionaireCodes.get(codeVersion));
+	setText(elementId + '_line_nos', questionaireCodes.get(codeVersion + '_line_nos'));
+	setText(elementId + '_executeTest', questionaireCodes.get(codeVersion + '_executeTest'));
+}
+
+function handleSkipSection(skipElem) {
+	const sectionElem = document.getElementById(currSectionTopic + '_code_qs');
+	if (skipElem.checked) {
+		sectionElem.style.opacity = 0.5;
+	} else {
+		sectionElem.style.opacity = 1;
+	}
+}
+
+function setText(elementId, text) {
+	document.getElementById(elementId).innerHTML = text;
+}
+
+function hide(elementId) {
+	document.getElementById(elementId).hidden = true;
+}
+
+function show(elementId) {
+	document.getElementById(elementId).hidden = false;
+}
+</script>
+	
+<div style="margin: 3% 25% 0% 25%;" id="consent_section">
+	<p>* We are conducting this survey based study to explore code understandability.<br><br>
+		* Participation is this study is entirely voluntary.<br><br>
+		* You are eligible to participate if you are 18 years of age or older, and have basic programming knowledge or above in <b>either Java or Python (familiarity with classes and inheritance is expected)</b>.<br><br>
+		* If you choose to participate, you will be required to <b>understand small code snippets</b> and then answer few questions related to understanding them. It should <b>take about 20 minutes</b> of your time.<br><br>
+		* There are no direct benefits or compensation for participating in this study, but the resulting research might eventually improve the tools you use while programming.<br><br>
+		* Any information we collect about you will be <b>anonymised before publishing</b> to ensure that your identity cannot be linked to the study data we publish.<br><br>
+		* For more queries regarding this study, please contact: Vikas Kushwaha, Phd Student, CSE, IIT Kanpur (<a href="mailto:vikask23@cse.iitk.ac.in" style="text-decoration: none; color: inherit;">vikask23@cse.iitk.ac.in</a>).<br><br>
+		* If you have any questions about the rights of research study participants, please contact the Institutional Ethics Committee (IEC), DORD, IIT Kanpur (<a href="mailto:dord@iitk.ac.in" style="text-decoration: none; color: inherit;">dord@iitk.ac.in</a>).<br><br>
+		* If you wish, you may leave the survey at any point until you click the "Finish" button. Your responses will be discarded and won't be stored on the server before that point.<br><br>
+		Your IIT Kanpur Email Id: <input type="text" id="email" name="email"><br><br>
+		<input type="checkbox" name="consent" id="consent"> I am 18 years of age or older and agree to take part in this study.
+	</p>
+</div>
+
+<div style="margin: 3% 25% 0% 25%;" id="metadata_section" hidden>
+	<p>Before we move to the questions about understanding code, please provide the following information about you:<br><br>
+		
+		(a) How many years of overall programming experience do you have? <select name="experience" id="experience">
+  <option value=""></option>
+  <option value="1">&lt; 1 year</option>
+  <option value="2">&lt; 2 years</option>
+  <option value="3">&lt; 3 years</option>
+  <option value="4">&lt; 4 years</option>
+  <option value="5">&lt; 5 years</option>
+  <option value="6">&lt; 6 years</option>
+  <option value="7">&lt; 7 years</option>
+  <option value="8">&lt; 8 years</option>
+  <option value="9">&lt; 9 years</option>
+  <option value="10">&lt; 10 years</option>
+  <option value="10+">10 years or above</option>
+</select><br><br>
+
+(b) What is your gender? (optional) <select name="gender" id="gender">
+  <option value=""></option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="NotListed">Not Listed</option>
+</select><br><br>
+
+(c) What is your designation? <select name="designation" id="designation">
+  <option value=""></option>
+  <option value="UndergraduateStudent">Undergraduate Student</option>
+  <option value="GraduateStudent">Graduate Student</option>
+  <option value="Professional">Professional</option>
+</select><br><br>
+
+(d) Please pick the language in which you want to see the code snippets. <select name="language" id="language">
+  <option value=""></option>
+  <option value="Java">Java</option>
+  <option value="Python">Python</option>
+</select>
+	</p>
+</div>
+
+<div hidden style="margin: 0% 0% 0% 0%;" id="questionaire_section">
+	<p>Try to understand the two code snippets shown below. For each code snippet, you can use the <b>Execute test()</b> button to verify if the value returned by test() in the snippet aligns with your understanding of the snippet.</p>
+	<div hidden id="side_by_side_code_viewer">
+		<div style="display:flex">
+			<div style="background: #f8f8f8; margin: 0% 0% 1% 0%; overflow:auto;width:50%;max-height:70vh;border:solid gray;border-width:.1em .1em .1em .1em;padding:.0em .0em;" id="left_code_viewer">
+				<div style="background: #d3d3d3; position: sticky; top: 0; z-index: 2; text-align:center; border:solid gray; border-width:0em 0em .1em 0em;">A</div>
+				<table><tr>
+					<td style="background: #d3d3d3; position: sticky; top: 0; z-index: 1;">
+						<pre style="margin: .0em .5em .0em .5em; line-height: 150%;" id="left_code_line_nos"></pre>
+					</td>
+					<td>
+						<pre style="margin: .0em .5em .0em .5em; line-height: 150%; tab-size: 4;" id="left_code"></pre>
+					</td>
+				</tr></table>
+				<div style="background: #d3d3d3; position: sticky; bottom: 0; z-index: 2; text-align:left; border:solid gray; border-width:.1em 0em 0em 0em; padding: .3em .5em .3em .5em;"><button onclick="show('left_code_executeTest')">Execute test()</button>&nbsp;&nbsp;&nbsp;<span style="color: #008000; font-weight: bold" id="left_code_executeTest" hidden></span></div>
+			</div>
+			
+			<div style="background: #f8f8f8; margin: 0% 0% 1% 0%; overflow:auto;width:50%;max-height:70vh;border:solid gray;border-width:.1em .1em .1em .1em;padding:.0em .0em;" id="right_code_viewer">
+				<div style="background: #d3d3d3; position: sticky; top: 0; z-index: 2; text-align:center; border:solid gray; border-width:0em 0em .1em 0em;">B</div>
+				<table><tr>
+					<td style="background: #d3d3d3; position: sticky; left: 0; z-index: 1;">
+						<pre style="margin: .0em .5em .0em .5em; line-height: 150%;" id="right_code_line_nos"></pre>
+					</td>
+					<td>
+						<pre style="margin: .0em .5em .0em .5em; line-height: 150%; tab-size: 4;" id="right_code"></pre>
+					</td>
+				</tr></table>
+				<div style="background: #d3d3d3; position: sticky; bottom: 0; z-index: 2; text-align:left; border:solid gray; border-width:.1em 0em 0em 0em; padding: .3em .5em .3em .5em;"><button onclick="show('right_code_executeTest')">Execute test()</button>&nbsp;&nbsp;&nbsp;<span style="color: #008000; font-weight: bold" id="right_code_executeTest" hidden></span></div>
+			</div>
+		</div>
+	</div>
+
+	<div hidden data-base="base_code_qs" id="perceptual_quality_code_qs" style="opacity: 1"></div>
+
+	<div hidden data-base="base_code_qs" id="memory_cost_code_qs" style="opacity: 1"></div>
+
+	<div hidden data-base="base_code_qs" id="abstraction_need_code_qs" style="opacity: 1"></div>
+
+	<div hidden data-base="base_code_qs" id="cohesion_code_qs" style="opacity: 1"></div>
+
+	<div hidden data-base="base_code_qs" id="logical_consistency_code_qs" style="opacity: 1"></div>
+
+	<div hidden data-base="base_code_qs" id="semantic_fit_code_qs" style="opacity: 1"></div>
+</div>
+
+<div style="float: right; margin: 0% 5% 10% 0%;" id="section_transition_controls">
+	<!-- <p id="skip_control" hidden><input type="checkbox" name="skip" id="skip" onchange="handleSkipSection(this)"> I want to skip this question</p> -->
+	<p style="color: red;" id="input_error"></p>
+	<button style="float: right;" id="section_transition_button">Start</button>
+</div>
+
+<p hidden style="margin: 3% 0% 0% 25%;" id="end_section">Uploading Responses.</p>
+
+<div hidden id="base_code_qs">
+	<p>Question (_c_/6): Which of the above two code snippets do you find to be <b>more understandable</b>, considering both the <b>effort</b> required as well as the <b>quality</b> of the understanding achieved?<br>
+		<input type="radio" id="_x__A" name="_x__response" value="A">
+		<label for="_x__A">A</label><br>
+	
+		<input type="radio" id="_x__B" name="_x__response" value="B">
+		<label for="_x__B">B</label><br>
+	
+		<input type="radio" id="_x__N" name="_x__response" value="N">
+		<label for="_x__N">Hard to pick between A or B</label><br>
+	</p>
+	
+	<p>Explain why you made that choice in the box below (max 300 characters).</p>
+	<textarea id="_x__explanation" name="_x__explanation" rows="4" cols="90" maxlength="300"></textarea>
+</div>
+	    
+</body>
+</html>

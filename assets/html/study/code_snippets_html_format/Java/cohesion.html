@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<p><b>First Code Snippet</b></p>
+<p>test() returns: <span id="cs1_executeTest">"dcba"</span></p>
+<pre id="cs1" style="tab-size: 4;"><span></span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">class</span> <span style="color: #00F; font-weight: bold">Coordinate</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">private</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>x;
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">private</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>y;
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #00F">Coordinate</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>x,<span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>y)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">x</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>x;
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">y</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>y;
+<span style="color: #BBB">	</span>}
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">getX</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">x</span>;
+<span style="color: #BBB">	</span>}
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">getY</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">y</span>;
+<span style="color: #BBB">	</span>}
+}
+
+<span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">class</span> <span style="color: #00F; font-weight: bold">StringUtils</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span>String<span style="color: #BBB"> </span><span style="color: #00F">reverseString</span>(String<span style="color: #BBB"> </span>str)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span>StringBuilder<span style="color: #BBB"> </span>sb<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">new</span><span style="color: #BBB"> </span>StringBuilder();
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">for</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>str.<span style="color: #687822">length</span>()<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #666">--</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">			</span>sb.<span style="color: #687822">append</span>(str.<span style="color: #687822">charAt</span>(i));
+<span style="color: #BBB">		</span>}
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>sb.<span style="color: #687822">toString</span>();
+<span style="color: #BBB">	</span>}
+}
+
+<span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span>String<span style="color: #BBB"> </span><span style="color: #00F">test</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="background: #FFFACD">StringUtils</span>.<span style="color: #687822">reverseString</span>(<span style="color: #BA2121">&quot;abcd&quot;</span>);
+}</pre>
+
+
+
+<p><b>Second Code Snippet</b></p>
+<p>test() returns: <span id="cs2_executeTest">"dcba"</span></p>
+<pre id="cs2" style="tab-size: 4;"><span></span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">class</span> <span style="color: #00F; font-weight: bold">CoordinateAndStringUtils</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">private</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>x;
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">private</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>y;
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #00F">CoordinateAndStringUtils</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>x,<span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>y)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">x</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>x;
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">y</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>y;
+<span style="color: #BBB">	</span>}
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span>String<span style="color: #BBB"> </span><span style="color: #00F">reverseString</span>(String<span style="color: #BBB"> </span>str)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span>StringBuilder<span style="color: #BBB"> </span>sb<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">new</span><span style="color: #BBB"> </span>StringBuilder();
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">for</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>str.<span style="color: #687822">length</span>()<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #666">--</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">			</span>sb.<span style="color: #687822">append</span>(str.<span style="color: #687822">charAt</span>(i));
+<span style="color: #BBB">		</span>}
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>sb.<span style="color: #687822">toString</span>();
+<span style="color: #BBB">	</span>}
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">getX</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">x</span>;
+<span style="color: #BBB">	</span>}
+<span style="color: #BBB">	</span>
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">getY</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">		</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">this</span>.<span style="color: #687822">y</span>;
+<span style="color: #BBB">	</span>}
+}
+
+<span style="color: #008000; font-weight: bold">public</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">static</span><span style="color: #BBB"> </span>String<span style="color: #BBB"> </span><span style="color: #00F">test</span>()<span style="color: #BBB"> </span>{
+<span style="color: #BBB">	</span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="background: #FFFACD">CoordinateAndStringUtils</span>.<span style="color: #687822">reverseString</span>(<span style="color: #BA2121">&quot;abcd&quot;</span>);
+}</pre>
+
+</body>
+</html>
