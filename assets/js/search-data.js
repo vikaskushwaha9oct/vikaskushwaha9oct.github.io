@@ -9,19 +9,19 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-research-papers",
-          title: "research-papers",
-          description: "publications by categories in reversed chronological order",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/research-papers/";
-          },
-        },{id: "nav-resume",
+  },{id: "nav-resume",
           title: "resume",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/resume/";
+            window.location.href = "/assets/pdf/VikasKushwaha.pdf";
+          },
+        },{id: "nav-research",
+          title: "research",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/https:/scholar.google.com/citations?user=8PuycQUAAAAJ";
           },
         },{id: "post-a-post-with-image-galleries",
       
