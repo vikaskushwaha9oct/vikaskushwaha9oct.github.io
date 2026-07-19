@@ -1,20 +1,7 @@
 ---
-layout: page
-permalink: /research-papers/
-title: research-papers
-description: publications by categories in reversed chronological order
+layout: default
+permalink: https://scholar.google.com/citations?user=8PuycQUAAAAJ
+title: research
 nav: true
-nav_order: 2
+nav_order: 5
 ---
-
-<!-- _pages/publications.md -->
-
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
-
-<div class="publications">
-
-{% bibliography %}
-
-</div>
